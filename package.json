@@ -1,0 +1,8 @@
+{
+  "name": "smart-monitor-home",
+  "version": "1.5.2",
+  "private": true,
+  "scripts": {
+    "test": "node tests/verify_fast_home.cjs && node tests/verify_lifecycle.cjs && node tests/verify_store_ui.cjs && node tests/verify_message_bridge.cjs && node tests/verify_direct_panels.cjs && node tests/verify_calendar.cjs"
+  }
+}

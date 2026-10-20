@@ -1,0 +1,175 @@
+/* A blurred scene layer supplies the frost even when TV backdrop blur is skipped. */
+.glass, .controls.glass, .weather-card.glass, .calendar-card.glass,
+.device-panel.glass, .store-detail.glass {
+  isolation: isolate;
+  overflow: hidden;
+  background: rgba(27, 48, 61, .6);
+  border: 1px solid rgba(239, 250, 255, .2);
+  box-shadow: inset 0 1px 0 #ffffff60, inset 0 -1px 0 #ffffff0e,
+    0 .6vw 2vw #00102028;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  text-shadow: 0 1px 5px #00152635;
+}
+.dock.glass { position: relative; border-radius: 2.35vw; }
+.glass::before, .glass::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.glass::before {
+  z-index: -2;
+  inset: -28px;
+  background-image: url('assets/alpine.png');
+  background-repeat: no-repeat;
+  background-size: var(--glass-scene-width, 100vw) var(--glass-scene-height, 100vh);
+  background-position: var(--glass-scene-x, center) var(--glass-scene-y, center);
+  filter: blur(22px) saturate(1.3);
+  opacity: 0;
+}
+.glass.glass-ready::before { opacity: 1; }
+.glass::after {
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 5% 0%, #ffffff40, transparent 58%),
+    linear-gradient(145deg, #e4f7ff12, #09283d5c 54%, #c9edff12);
+  box-shadow: inset 0 1px 1px #ffffff55, inset 1px 0 0 #ffffff12;
+}
+body.warm .glass::before { filter: blur(22px) sepia(.24) saturate(.83) brightness(.83); }
+.weather-card.glass, .calendar-card.glass { border-radius: 1.7vw; }
+.controls.glass { border-radius: 2vw; }
+.device-panel.glass::after, .settings.glass::after, .store-detail.glass::after {
+  background: radial-gradient(ellipse at 5% 0%, #ffffff2b, transparent 58%),
+    linear-gradient(145deg, #173b5460, #102e4599);
+}
+
+/* Tinted app glass, with one continuous rounded edge instead of a frame. */
+.tile, .tile.apple, .tile.netflix, .tile.youtube, .tile.prime,
+.tile.hotstar, .tile.spotify, .tile.generic, .tile.store {
+  position: relative;
+  background-color: var(--tile-tint, #1b40568c);
+  background-image: radial-gradient(ellipse at 10% 0%, #ffffff25, transparent 65%),
+    linear-gradient(155deg, #ffffff12, transparent 48%, #d2f0ff10);
+  border: 1px solid #ffffff18;
+  border-radius: 1.5vw;
+  box-shadow: inset 0 1px 0 #ffffff38, 0 .3vw 1vw #00152620;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.tile.apple { --tile-tint: #000; color: #fff; }
+.tile.netflix { --tile-tint: #000; color: #e50914; }
+.tile.youtube { --tile-tint: #f0f7ffcc; }
+.tile.prime { --tile-tint: #082f4e96; color: #00a8e1; }
+.tile.hotstar { --tile-tint: #201a4b96; }
+.tile.spotify { --tile-tint: #0b332196; }
+.tile.store { --tile-tint: #0787eec2; }
+.tile::after {
+  content: none;
+}
+.tile .brand-logo, .tile .wordmark, .tile .app-icon { filter: none; text-shadow: none; }
+.app, .app:focus, .app:focus-visible { outline: none; border-radius: 1.5vw; isolation: isolate; }
+.app .tile {
+  transform: translate3d(0,0,0) scale(1);
+  transform-origin: 50% 60%;
+  transition: transform .36s cubic-bezier(.2,.7,.2,1);
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.all-apps .app .tile { will-change: auto; }
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow: 0 .65vw 1.3vw #00152655, 0 0 1.5vw .12vw #d6f2ff38;
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+.app::after { content: none; }
+.app:focus, .app:hover { z-index: 2; }
+.app:focus .tile, .app:hover .tile {
+  transform: translate3d(0,-.3vw,0) scale(1.06);
+  border-color: #ffffff18;
+  filter: none;
+  box-shadow: inset 0 1px 0 #ffffff38, 0 .3vw 1vw #00152620;
+}
+.app:focus::before, .app:hover::before { opacity: 1; }
+
+
+/* Focus lifts and brightens the existing surface; it never adds a second box. */
+.control, .reference-grid .control, .brightness-control,
+.device-current, .wifi-connection, .device-row, .app-toggle,
+.keyboard-key, .store-key, .catalog-art, .settings-actions button,
+.library-tools button, .text-button, .store-header-actions button {
+  background: linear-gradient(145deg, #ffffff13, #ffffff06), #12324935;
+  border: 1px solid #ffffff0e;
+  box-shadow: inset 0 1px 0 #ffffff15;
+}
+.control, .reference-grid .control { transition: background .18s, box-shadow .18s, transform .18s; }
+.control:focus, .control:hover,
+.reference-grid .control:focus, .reference-grid .control:hover,
+.device-panel button:focus, .device-panel button:hover,
+.settings button:focus, .settings button:hover,
+.library-tools button:focus, .library-tools button:hover {
+  outline: none;
+  background: linear-gradient(145deg, #f0faff52, #d3f2ff20);
+  border-color: #ffffff38;
+  color: #fff;
+  box-shadow: inset 0 1px 0 #ffffff80, 0 .3vw .9vw #00142622, 0 0 .8vw #daf5ff18;
+  text-shadow: 0 1px 4px #00152840;
+  transform: scale(1.018);
+}
+.control:focus .control-icon.blue, .control:hover .control-icon.blue { color: #a6eeff; }
+.weather-card.glass:focus, .weather-card.glass:hover {
+  outline: none;
+  border-color: #ffffff70;
+  box-shadow: inset 0 1px 0 #ffffff90, 0 .5vw 1.6vw #00152730;
+}
+.calendar-heading button:focus, .calendar-heading button:hover {
+  outline: none;
+  background: #ffffff24;
+  box-shadow: inset 0 1px 0 #ffffff50;
+}
+.icon-button:focus, .icon-button:hover {
+  outline: none;
+  background: #ffffff26;
+  box-shadow: inset 0 1px 0 #ffffff80, 0 0 .7vw #d6f3ff22;
+}
+.icon-button.selected { background: #eaf7ffcf; color: #203b49; text-shadow: none; }
+.calendar-day.today {
+  background: linear-gradient(145deg, #fff, #d9eff6);
+  color: #183e50;
+  box-shadow: 0 .1vw .5vw #001e3330;
+  text-shadow: none;
+}
+.calendar-weekdays { color: #d3e3e9; }
+.calendar-day.outside { color: #9fb7c3; }
+#weather-condition { opacity: .95; }
+#weather-range { opacity: .8; }
+#brightness-slider { background: #ffffff50; box-shadow: inset 0 1px 2px #001a3630; }
+#brightness-slider:focus { outline: none; box-shadow: 0 0 .5vw #d6f3ff90; }
+#brightness-slider::-webkit-slider-thumb { background: linear-gradient(145deg, #fff, #deeff7); box-shadow: 0 .1vw .4vw #00182d50; }
+.brightness-control:focus-within { background: linear-gradient(145deg, #f0faff38, #d3f2ff12); border-color: #ffffff38; }
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass, .controls.glass, .weather-card.glass, .calendar-card.glass,
+  .device-panel.glass, .store-detail.glass { background: #263f50; }
+  .glass::before { display: none; }
+  .tile { -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
+/* Brand artwork stays original; no overlays or colour treatment. */
+.tile.apple, .tile.netflix { background-color:#000; background-image:none; }
+.tile.netflix .netflix-n { width:3.3vw; height:5.25vw; fill:#e50914; }
+.tile.hotstar .hotstar-logo { width:100%; height:100%; object-fit:cover; border-radius:inherit; }
+.catalog-art .hotstar-logo { width:100%; height:100%; object-fit:contain; border-radius:inherit; }
+
+/* Release expensive hidden layers; restore the existing scene on return. */
+body.home-hidden .glass::before { display:none; background-image:none; filter:none; }
+body.home-hidden .tile { will-change:auto; }
+body.home-resuming .app .tile, body.home-resuming .app::before, body.home-resuming .app::after { transition:none; }

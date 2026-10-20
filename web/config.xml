@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://quiet-tv.local/app" version="1.5.2" viewmodes="maximized">
+  <tizen:application id="QuietTV001.QuietTV" package="QuietTV001" required_version="6.0"/>
+  <content src="index.html"/>
+  <name>Home</name>
+  <icon src="icon.png"/>
+  <description>A personal home screen with a floating app dock.</description>
+  <tizen:profile name="tv-samsung"/>
+  <access origin="https://d1oxlq5h9kq8q5.cloudfront.net" subdomains="false"/>
+  <access origin="https://d2px1x70oyj1za.cloudfront.net" subdomains="false"/>
+  <access origin="https://store.samsungcloudcdn.com" subdomains="false"/>
+  <access origin="https://api.open-meteo.com" subdomains="false"/>
+  <access origin="http://127.0.0.1:8879" subdomains="false"/>
+  <tizen:privilege name="http://tizen.org/privilege/internet"/>
+  <tizen:privilege name="http://tizen.org/privilege/application.info"/>
+  <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+  <tizen:setting screen-orientation="landscape" context-menu="disable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+  <tizen:metadata key="http://samsung.com/tv/metadata/prelaunch.support" value="true"/>
+  <tizen:metadata key="http://samsung.com/tv/metadata/use.network" value="false"/>
+  <tizen:metadata key="http://samsung.com/tv/metadata/screen.size" value="normal"/>
+</widget>

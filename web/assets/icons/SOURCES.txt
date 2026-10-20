@@ -1,0 +1,20 @@
+Vector brand icons from Simple Icons (CC0 project):
+https://github.com/simple-icons/simple-icons
+https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md
+
+https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/netflix.svg
+https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/youtube.svg
+https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/appletv.svg
+https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/spotify.svg
+
+Brand marks remain trademarks of their respective owners.
+
+Prime Video vector: https://raw.githubusercontent.com/simple-icons/simple-icons/13.0.0/icons/primevideo.svg
+
+Netflix wordmark: official Netflix India homepage https://www.netflix.com/in/
+Asset: https://occ.a.nflxso.net/dnmt/api/v6/iL4oJVDYZ8KLSrJ6eG2OwtghbfQ/AAAAAVIENVPMEM3Kn4hVzJseX4N8xPjtBDIpwuFDucWksdxQZ8Ss6Xf8U_vt7ThYYfRmzq0x1CS3nOwTGyVrgADvwfB_tPiK_liS2RjvI40RJSzbKRk-o8b3nCxHfCCnBsyB2XBB9_vRoSmN.svg
+
+App Store vector: https://raw.githubusercontent.com/simple-icons/simple-icons/13.0.0/icons/appstore.svg
+
+JioHotstar original media-kit logo: https://www.jiostar.com/mediatoolkit/all-logos/
+Asset: https://cdn.jiostar.com/jiostar/wp-content/uploads/2025/07/JioHot-Star-1.png

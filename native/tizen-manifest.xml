@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="6.0" package="HomeCtl001" version="1.5.1">
+ <profile name="tv"/>
+ <ui-application appid="HomeCtl001.Control" exec="HomeControls.dll" type="dotnet" multiple="false" nodisplay="true" taskmanage="false" launch_mode="single">
+  <label>Home Controls</label><icon>icon.png</icon>
+  <background-category value="background-network"/>
+  <background-category value="iot-communication"/>
+  <metadata key="http://tizen.org/metadata/prefer_dotnet_aot" value="false"/>
+ </ui-application>
+ <privileges>
+  <privilege>http://tizen.org/privilege/internet</privilege>
+  <privilege>http://tizen.org/privilege/network.get</privilege>
+  <privilege>http://tizen.org/privilege/network.set</privilege>
+  <privilege>http://tizen.org/privilege/bluetooth</privilege>
+ </privileges>
+</manifest>

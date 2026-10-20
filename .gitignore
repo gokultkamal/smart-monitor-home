@@ -1,0 +1,13 @@
+private/
+build/
+*.wgt
+*.tpk
+*.p12
+*.pem
+*.cer
+*.crt
+.env*
+**/bin/
+**/obj/
+web/device-config.local.js
+.DS_Store

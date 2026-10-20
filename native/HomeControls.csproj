@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net6.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><AssemblyName>HomeControls</AssemblyName></PropertyGroup>
+ <ItemGroup>
+  <Reference Include="Tizen.Applications.Common"><HintPath>$(TizenFrameworkDir)/Tizen.Applications.Common.dll</HintPath><Private>false</Private></Reference>
+  <Reference Include="Tizen.Applications.UI"><HintPath>$(TizenFrameworkDir)/Tizen.Applications.UI.dll</HintPath><Private>false</Private></Reference>
+  <Reference Include="Tizen.Applications.MessagePort"><HintPath>$(TizenFrameworkDir)/Tizen.Applications.MessagePort.dll</HintPath><Private>false</Private></Reference>
+ </ItemGroup>
+</Project>
